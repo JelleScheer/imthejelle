@@ -1,0 +1,6 @@
+https://elo.hsleiden.nl/bbcswebdav/pid-83883-dt-content-rid-136767_1/courses/tin1213-imthe1/Cursusdocumenten/Sheets%20Les%204/Les%204.pdf
+http://codesign.cs.tamu.edu/images/files/psoc/LabManualPdf_PSoC5/ISR_Counter_Analog.pdf
+http://www.avr-tutorials.com/interrupts/avr-external-interrupt-c-programming
+http://www.avr-tutorials.com/interrupts/about-avr-8-bit-microcontrollers-interrupts
+http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&t=89843&start=all&postdays=0&postorder=asc
+http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html

@@ -1,0 +1,47 @@
+stap 1 pseudo code:
+
+// set up ISR
+	// prescaler, activatie?
+// Doe iets als ISR verloopt
+	// PWM wordt meer of minder
+// Verander kleur van de led
+
+stap 2:
+
+#define F_CPU 1000000 // Snelheid van de CPU, met dit kristal en deze waarde, is het precies 1 seconde
+#include <avr/io.h> // Laadt de IO library, deze bevat de poorten
+#include <util/delay.h> // // Laadt de Delay library, nu kan je een delay instellen
+#include <stdio.h> // Laadt de stdio library, deze vat de meeste nodige onderdelen
+#include <math.h> // Laadt de reken library, nu kunnen we rekenen.
+#include <avr/interrupt.h> 
+
+ISR (PCINT0_vect) // PCINT0 interrupt
+{
+   /* verander iets aan de RGB waardes of aan de pwm */
+
+
+
+}
+
+int main(void)
+{
+	DDRB  = 0b00001000; // PB3 output
+    DDRD  = 0b01100000; // PD5 en PD6 outputs
+	
+	TCCR0A = _BV(COM0A1) | _BV(COM0B1) | _BV(WGM01) | _BV(WGM00); // Niet inverterende snelle PWM modus
+    TCCR0B = _BV(CS00); // Geen prescaling
+ 
+    TCCR2A = _BV(COM2A1) | _BV(COM2B1) | _BV(WGM21) | _BV(WGM20); // Niet inverterende snelle PWM modus
+    TCCR2B = _BV(CS20); // Geen prescaling
+
+    PCMSK0 |= (1 << PCINT0); /* Enable PCINT0 */
+    PCICR |= (1 << PCIE0); /* Activate interrupt on enabled PCINT7-0 */
+    sei (); /* zet de interrupts aan, cli (); zet ze uit.*/
+	
+	while(1)
+	{
+    
+	}
+
+    return 0;   
+}
